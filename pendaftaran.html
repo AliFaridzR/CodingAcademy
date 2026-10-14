@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran | Academy Zero</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Academy<span>Zero</span></div>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="pendaftaran.html">Pendaftaran</a>
+        </nav>
+    </header>
+
+    <section class="page-banner">
+        <p class="label">GABUNG BERSAMA KAMI</p>
+        <h1>Formulir Pendaftaran</h1>
+        <p>Lengkapi data berikut untuk mendaftar pelatihan di Academy Zero.</p>
+    </section>
+
+    <section class="section registration-section">
+        <div class="form-container">
+            <form id="formPendaftaran">
+                <div class="form-group">
+                    <label for="nik">NIK</label>
+                    <input
+                        type="text"
+                        id="nik"
+                        name="nik"
+                        inputmode="numeric"
+                        maxlength="16"
+                        pattern="[0-9]{16}"
+                        title="NIK harus terdiri dari 16 digit angka."
+                        placeholder="Masukkan 16 digit NIK"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input
+                        type="text"
+                        id="nama"
+                        name="nama"
+                        placeholder="Masukkan nama lengkap"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label>Jenis Kelamin</label>
+                    <div class="radio-group">
+                        <label>
+                            <input
+                                type="radio"
+                                name="jenisKelamin"
+                                value="Laki-laki"
+                                required>
+                            Laki-laki
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="jenisKelamin"
+                                value="Perempuan">
+                            Perempuan
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="hp">Nomor HP</label>
+                    <input
+                        type="tel"
+                        id="hp"
+                        name="hp"
+                        inputmode="tel"
+                        pattern="[0-9+ -]{10,16}"
+                        title="Masukkan nomor HP sepanjang 10–16 karakter."
+                        placeholder="Contoh: 081234567890"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="alamat">Alamat</label>
+                    <textarea
+                        id="alamat"
+                        name="alamat"
+                        rows="4"
+                        placeholder="Masukkan alamat lengkap"
+                        required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="bahasa">
+                        Bahasa Pemrograman yang Diminati
+                    </label>
+                    <select id="bahasa" name="bahasa" required>
+                        <option value="">-- Pilih Bahasa Pemrograman --</option>
+                        <option value="HTML dan CSS">HTML dan CSS</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Python">Python</option>
+                        <option value="Java">Java</option>
+                        <option value="C++">C++</option>
+                        <option value="PHP">PHP</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn submit-btn">
+                    Simpan Pendaftaran
+                </button>
+            </form>
+
+            
+            <div id="hasilPendaftaran" class="result" hidden>
+                <h2>Data Pendaftaran</h2>
+                <p>Data pendaftaran berhasil dikonfirmasi.</p>
+
+                <div id="detailPendaftaran"></div>
+
+                <div class="aksi-data">
+                    <button type="button" id="tombolEdit" class="btn">
+                        Edit Data
+                    </button>
+
+                    <button type="button" id="tombolHapus" class="btn btn-hapus">
+                        Hapus Data
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Academy Zero. Belajar Coding untuk Masa Depan.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

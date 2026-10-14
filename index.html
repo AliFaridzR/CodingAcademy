@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academy Zero</title>
+    <title>Beranda | Academy Zero</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header class="header">
         <div class="logo">Academy<span>Zero</span></div>
         <nav>
-            <a href="#gallery">Gallery</a>
-            <a href="#pendaftaran">Pendaftaran</a>
+            <a href="index.html">Beranda</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="pendaftaran.html">Pendaftaran</a>
         </nav>
     </header>
 
@@ -26,167 +26,30 @@
                 Academy Zero. Belajar dari dasar hingga membuat
                 proyek digital sendiri.
             </p>
-            <a href="#pendaftaran" class="btn">Daftar Sekarang</a>
+            <a href="pendaftaran.html" class="btn">Daftar Sekarang</a>
         </div>
     </section>
 
-    <!-- TAMPILAN GALLERY -->
-    <section id="gallery" class="section">
+    <section class="section home-links">
         <div class="section-heading">
-            <p class="label">KEGIATAN KAMI</p>
-            <h2>Gallery Pelatihan</h2>
-            <p>Lihat berbagai kegiatan belajar dan praktik coding.</p>
+            <p class="label">JELAJAHI ACADEMY ZERO</p>
+            <h2>Mulai Belajar Bersama Kami</h2>
+            <p>
+                Lihat kegiatan pelatihan atau langsung isi
+                formulir pendaftaran.
+            </p>
         </div>
 
-        <div class="gallery-container">
-            <article class="gallery-card">
-                <img
-                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
-                    alt="Peserta mengikuti pelatihan komputer">
-                <div class="gallery-info">
-                    <h3>Pelatihan Web Development</h3>
-                    <p>
-                        Peserta mempelajari dasar HTML dan CSS untuk
-                        membuat halaman website yang menarik dan responsif.
-                    </p>
-                </div>
-            </article>
-
-            <article class="gallery-card">
-                <img
-                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
-                    alt="Kegiatan belajar teknologi">
-                <div class="gallery-info">
-                    <h3>Praktik Pemrograman</h3>
-                    <p>
-                        Peserta berlatih menulis kode, memahami logika
-                        pemrograman, dan menyelesaikan latihan secara langsung.
-                    </p>
-                </div>
-            </article>
-
-            <article class="gallery-card">
-                <img
-                    src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80"
-                    alt="Diskusi dan kerja sama tim">
-                <div class="gallery-info">
-                    <h3>Diskusi dan Kolaborasi</h3>
-                    <p>
-                        Peserta bekerja sama dalam tim untuk bertukar ide,
-                        memecahkan masalah, dan mengembangkan proyek digital.
-                    </p>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- TAMPILAN PENDAFTARAN -->
-    <section id="pendaftaran" class="section registration-section">
-        <div class="section-heading">
-            <p class="label">GABUNG BERSAMA KAMI</p>
-            <h2>Formulir Pendaftaran</h2>
-            <p>Lengkapi data berikut untuk mendaftar pelatihan.</p>
-        </div>
-
-        <div class="form-container">
-            <form id="formPendaftaran">
-                <div class="form-group">
-                    <label for="nik">NIK</label>
-                    <input
-                        type="text"
-                        id="nik"
-                        name="nik"
-                        inputmode="numeric"
-                        maxlength="16"
-                        pattern="[0-9]{16}"
-                        placeholder="Masukkan 16 digit NIK"
-                        required>
-                </div>
-
-                <div class="form-group">
-                    <label for="nama">Nama Lengkap</label>
-                    <input
-                        type="text"
-                        id="nama"
-                        name="nama"
-                        placeholder="Masukkan nama lengkap"
-                        required>
-                </div>
-
-                <div class="form-group">
-                    <label>Jenis Kelamin</label>
-                    <div class="radio-group">
-                        <label>
-                            <input type="radio" name="jenisKelamin"
-                                   value="Laki-laki" required>
-                            Laki-laki
-                        </label>
-                        <label>
-                            <input type="radio" name="jenisKelamin"
-                                   value="Perempuan">
-                            Perempuan
-                        </label>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="hp">Nomor HP</label>
-                    <input
-                        type="tel"
-                        id="hp"
-                        name="hp"
-                        inputmode="tel"
-                        pattern="[0-9+ -]{10,16}"
-                        placeholder="Contoh: 081234567890"
-                        required>
-                </div>
-
-                <div class="form-group">
-                    <label for="alamat">Alamat</label>
-                    <textarea
-                        id="alamat"
-                        name="alamat"
-                        rows="4"
-                        placeholder="Masukkan alamat lengkap"
-                        required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="bahasa">Bahasa Pemrograman yang Diminati</label>
-                    <select id="bahasa" name="bahasa" required>
-                        <option value="">-- Pilih Bahasa Pemrograman --</option>
-                        <option value="HTML dan CSS">HTML dan CSS</option>
-                        <option value="JavaScript">JavaScript</option>
-                        <option value="Python">Python</option>
-                        <option value="Java">Java</option>
-                        <option value="C++">C++</option>
-                        <option value="PHP">PHP</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="btn submit-btn">
-                    Simpan Pendaftaran
-                </button>
-            </form>
-
-            <!-- Hasil pendaftaran ditampilkan di sini -->
-            <div id="hasilPendaftaran" class="result" hidden>
-                <h2>Pendaftaran Berhasil!</h2>
-                <p>Berikut adalah data pendaftaran Anda:</p>
-
-                <div id="detailPendaftaran"></div>
-
-                <button type="button" id="tombolKembali" class="btn">
-                    Kembali ke Formulir
-                </button>
-            </div>
+        <div class="home-link-buttons">
+            <a href="gallery.html" class="btn">Lihat Gallery</a>
+            <a href="pendaftaran.html" class="btn">
+                Isi Formulir Pendaftaran
+            </a>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2026 Academy Zero. Belajar Coding untuk Masa Depan.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>

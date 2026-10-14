@@ -2,44 +2,54 @@
 const form = document.getElementById("formPendaftaran");
 const hasil = document.getElementById("hasilPendaftaran");
 const detail = document.getElementById("detailPendaftaran");
-const tombolKembali = document.getElementById("tombolKembali");
+
+const tombolEdit = document.getElementById("tombolEdit");
+const tombolHapus = document.getElementById("tombolHapus");
+
+let dataPendaftaran = null;
 
 form.addEventListener("submit", function (event) {
-    // Mencegah form langsung dikirim atau halaman dimuat ulang.
     event.preventDefault();
 
-    // Tampilkan dialog konfirmasi.
-    const yakin = confirm("Apakah Anda sudah yakin untuk menyimpan?");
+    if (!form.reportValidity()) {
+        return;
+    }
 
-    // Jika memilih Tidak, batalkan proses.
+    const yakin = confirm(
+        "Apakah Anda sudah yakin untuk menyimpan?"
+    );
+
     if (!yakin) {
         return;
     }
 
-    // Ambil data dari formulir.
-    const nik = document.getElementById("nik").value.trim();
-    const nama = document.getElementById("nama").value.trim();
-    const jenisKelamin =
-        form.querySelector('input[name="jenisKelamin"]:checked').value;
-    const hp = document.getElementById("hp").value.trim();
-    const alamat = document.getElementById("alamat").value.trim();
-    const bahasa = document.getElementById("bahasa").value;
+    dataPendaftaran = {
+        nik: document.getElementById("nik").value.trim(),
+        nama: document.getElementById("nama").value.trim(),
+        jenisKelamin: form.querySelector(
+            'input[name="jenisKelamin"]:checked'
+        ).value,
+        hp: document.getElementById("hp").value.trim(),
+        alamat: document.getElementById("alamat").value.trim(),
+        bahasa: document.getElementById("bahasa").value
+    };
 
-    // Buat daftar data hasil pendaftaran.
-    const data = [
-        ["NIK", nik],
-        ["Nama Lengkap", nama],
-        ["Jenis Kelamin", jenisKelamin],
-        ["Nomor HP", hp],
-        ["Alamat", alamat],
-        ["Bahasa Pemrograman", bahasa]
-    ];
+    tampilkanData();
+});
 
-    // Kosongkan hasil sebelumnya.
+function tampilkanData() {
     detail.replaceChildren();
 
-    // Tampilkan data dengan aman sebagai teks.
     const daftar = document.createElement("dl");
+
+    const data = [
+        ["NIK", dataPendaftaran.nik],
+        ["Nama Lengkap", dataPendaftaran.nama],
+        ["Jenis Kelamin", dataPendaftaran.jenisKelamin],
+        ["Nomor HP", dataPendaftaran.hp],
+        ["Alamat", dataPendaftaran.alamat],
+        ["Bahasa Pemrograman", dataPendaftaran.bahasa]
+    ];
 
     data.forEach(function (item) {
         const label = document.createElement("dt");
@@ -53,18 +63,59 @@ form.addEventListener("submit", function (event) {
 
     detail.appendChild(daftar);
 
-    // Tampilkan hasil dan sembunyikan formulir.
     form.hidden = true;
     hasil.hidden = false;
 
-    // Arahkan pengguna ke hasil pendaftaran.
-    hasil.scrollIntoView({ behavior: "smooth", block: "start" });
-});
+    hasil.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
 
-// Tombol untuk kembali dan mengubah data.
-tombolKembali.addEventListener("click", function () {
+// Edit: kembalikan data ke formulir.
+tombolEdit.addEventListener("click", function () {
+    if (!dataPendaftaran) return;
+
+    document.getElementById("nik").value = dataPendaftaran.nik;
+    document.getElementById("nama").value = dataPendaftaran.nama;
+    document.getElementById("hp").value = dataPendaftaran.hp;
+    document.getElementById("alamat").value = dataPendaftaran.alamat;
+    document.getElementById("bahasa").value = dataPendaftaran.bahasa;
+
+    form.querySelectorAll('input[name="jenisKelamin"]').forEach(
+        function (radio) {
+            radio.checked = radio.value === dataPendaftaran.jenisKelamin;
+        }
+    );
+
     hasil.hidden = true;
     form.hidden = false;
 
-    form.scrollIntoView({ behavior: "smooth", block: "start" });
+    form.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+});
+
+// Hapus: minta konfirmasi sebelum menghapus data.
+tombolHapus.addEventListener("click", function () {
+    const yakinHapus = confirm(
+        "Apakah Anda yakin ingin menghapus data pendaftaran?"
+    );
+
+    if (!yakinHapus) {
+        return;
+    }
+
+    dataPendaftaran = null;
+    form.reset();
+    hasil.hidden = true;
+    form.hidden = false;
+
+    detail.replaceChildren();
+
+    form.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 });

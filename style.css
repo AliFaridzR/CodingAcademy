@@ -17,6 +17,7 @@ body {
     line-height: 1.6;
 }
 
+/* Navigasi */
 .header {
     background-color: #172554;
     color: white;
@@ -52,6 +53,7 @@ nav a:hover {
     color: #93c5fd;
 }
 
+/* Beranda */
 .hero {
     min-height: 380px;
     padding: 80px 8%;
@@ -99,21 +101,37 @@ nav a:hover {
     cursor: pointer;
 }
 
+.btn:hover {
+    background-color: #1d4ed8;
+}
+
 .hero .btn {
     background-color: white;
     color: #172554;
 }
 
-.btn:hover {
-    background-color: #1d4ed8;
+.hero .btn:hover {
+    background-color: #dbeafe;
+}
+
+/* Judul halaman */
+.page-banner {
+    padding: 55px 8%;
+    text-align: center;
+    background: linear-gradient(120deg, #172554, #2563eb);
     color: white;
 }
 
-.hero .btn:hover {
-    background-color: #dbeafe;
-    color: #172554;
+.page-banner .label {
+    color: #bfdbfe;
 }
 
+.page-banner h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+/* Bagian umum */
 .section {
     padding: 65px 8%;
 }
@@ -129,6 +147,7 @@ nav a:hover {
     color: #172554;
 }
 
+/* Gallery */
 .gallery-container {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -163,6 +182,36 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
+.gallery-cta {
+    text-align: center;
+    margin-top: 45px;
+    padding: 30px;
+    border-radius: 12px;
+    background-color: #eaf0fb;
+}
+
+.gallery-cta h2 {
+    color: #172554;
+    margin-bottom: 10px;
+}
+
+.gallery-cta p {
+    margin-bottom: 20px;
+}
+
+/* Tombol beranda */
+.home-links {
+    background-color: #eaf0fb;
+}
+
+.home-link-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Formulir pendaftaran */
 .registration-section {
     background-color: #eaf0fb;
 }
@@ -227,6 +276,7 @@ select:focus {
     margin-top: 5px;
 }
 
+/* Hasil pendaftaran */
 .result {
     margin-top: 20px;
     padding: 25px;
@@ -262,6 +312,7 @@ select:focus {
     display: none !important;
 }
 
+/* Footer */
 footer {
     padding: 22px;
     text-align: center;
@@ -269,6 +320,7 @@ footer {
     color: white;
 }
 
+/* Tampilan tablet */
 @media (max-width: 800px) {
     .gallery-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -279,6 +331,7 @@ footer {
     }
 }
 
+/* Tampilan HP */
 @media (max-width: 550px) {
     .header {
         padding: 15px 5%;
@@ -288,6 +341,8 @@ footer {
 
     nav {
         gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .hero {
@@ -296,6 +351,14 @@ footer {
 
     .hero h1 {
         font-size: 29px;
+    }
+
+    .page-banner {
+        padding: 40px 5%;
+    }
+
+    .page-banner h1 {
+        font-size: 28px;
     }
 
     .section {
@@ -308,5 +371,38 @@ footer {
 
     .form-container {
         padding: 20px;
+    }
+
+    .home-link-buttons {
+        flex-direction: column;
+    }
+
+    .home-link-buttons .btn {
+        text-align: center;
+    }
+}
+
+.aksi-data {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.btn-hapus {
+    background-color: #dc2626;
+}
+
+.btn-hapus:hover {
+    background-color: #b91c1c;
+}
+
+@media (max-width: 550px) {
+    .aksi-data {
+        flex-direction: column;
+    }
+
+    .aksi-data .btn {
+        width: 100%;
     }
 }
