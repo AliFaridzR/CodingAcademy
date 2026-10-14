@@ -406,3 +406,285 @@ footer {
         width: 100%;
     }
 }
+
+/* ===== HERO DAN PANEL KODE ===== */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 50px;
+    padding: 75px 8%;
+    background: #f4f7f6;
+}
+
+.hero-content {
+    min-width: 0;
+}
+
+.hero-label,
+.section-label {
+    display: inline-block;
+    color: #0f766e;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero-content h1 {
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.15;
+    color: #172b2b;
+    margin: 0 0 22px;
+}
+
+.hero-content h1 span {
+    display: block;
+    color: #0f766e;
+}
+
+.hero-content p {
+    max-width: 500px;
+    color: #61716f;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.btn-primary {
+    background: #0f766e;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #115e59;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 1px solid #cbd8d5;
+    color: #174b47;
+    background: white;
+}
+
+.btn-secondary:hover {
+    border-color: #0f766e;
+}
+
+/* ===== JENDELA KODE ===== */
+.code-window {
+    min-width: 0;
+    overflow: hidden;
+    background: #142321;
+    border: 1px solid #29423e;
+    border-radius: 14px;
+    box-shadow: 0 20px 45px rgba(15, 50, 45, 0.15);
+}
+
+.code-header,
+.code-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px 20px;
+    color: #b5c8c3;
+    font-size: 12px;
+}
+
+.code-header {
+    border-bottom: 1px solid #29423e;
+}
+
+.code-footer {
+    border-top: 1px solid #29423e;
+}
+
+.code-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.code-dots span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #7ba79a;
+}
+
+.code-dots span:first-child {
+    background: #f28b82;
+}
+
+.code-dots span:nth-child(2) {
+    background: #fdd663;
+}
+
+.code-dots span:nth-child(3) {
+    background: #81c995;
+}
+
+.code-body {
+    padding: 22px 24px;
+    color: #e0ebe7;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 13px;
+    line-height: 1.8;
+    overflow-x: auto;
+}
+
+.code-body p {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.code-indent {
+    padding-left: 24px;
+}
+
+.code-purple {
+    color: #d5a6ff;
+}
+
+.code-blue {
+    color: #8bd5ff;
+}
+
+.code-green {
+    color: #a8e6a3;
+}
+
+.code-yellow {
+    color: #f6d477;
+}
+
+/* ===== BAGIAN FITUR BELAJAR ===== */
+.learning-section {
+    padding: 75px 8%;
+    background: #ffffff;
+}
+
+.section-heading {
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    color: #172b2b;
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.3;
+    margin: 0;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.feature-card {
+    padding: 28px;
+    background: #f8faf9;
+    border: 1px solid #e2eae7;
+    border-radius: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(20, 60, 50, 0.08);
+}
+
+.feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    background: #dcefeb;
+    color: #0f766e;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.feature-card h3 {
+    color: #172b2b;
+    font-size: 19px;
+    margin: 0 0 12px;
+}
+
+.feature-card p {
+    color: #657572;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ===== RESPONSIVE HP DAN TABLET ===== */
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 55px 6%;
+    }
+
+    .learning-section {
+        padding: 55px 6%;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 42px 5%;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons a {
+        text-align: center;
+    }
+
+    .code-body {
+        padding: 18px 14px;
+        font-size: 11px;
+    }
+
+    .learning-section {
+        padding: 45px 5%;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        padding: 23px;
+    }
+}
