@@ -688,3 +688,98 @@ footer {
         padding: 23px;
     }
 }
+
+body {
+    margin: 0;
+}
+
+/* Navbar */
+nav,
+.navbar,
+header {
+    background: #172653;
+    color: #ffffff;
+}
+
+nav a,
+.navbar a,
+header a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Hero Beranda */
+.hero {
+    background: linear-gradient(
+        110deg,
+        #192b58 0%,
+        #214aa6 55%,
+        #2861ed 100%
+    );
+    color: #ffffff;
+}
+
+/* Judul dan paragraf hero */
+.hero-content h1,
+.hero-content p {
+    color: #ffffff;
+}
+
+.hero-content h1 span {
+    color: #a8c9ff;
+}
+
+/* Label kecil */
+.hero-label {
+    color: #c6d9ff;
+}
+
+/* Tombol */
+.btn-primary {
+    background: #ffffff;
+    color: #214aa6;
+}
+
+.btn-primary:hover {
+    background: #e5edff;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+/* Panel kode */
+.code-window {
+    background: #101a35;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Bagian kartu belajar */
+.learning-section {
+    background: #f4f7fc;
+}
+
+.section-heading h2 {
+    color: #172653;
+}
+
+.section-label {
+    color: #285dcc;
+}
+
+.feature-card {
+    background: #ffffff;
+    border: 1px solid #dfe7f5;
+}
+
+.feature-card h3 {
+    color: #172653;
+}
+
+.feature-icon {
+    background: #e1eaff;
+    color: #285dcc;
+}
+
